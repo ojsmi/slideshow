@@ -1,0 +1,15 @@
+<li class="slideshow--slide slide slide__writing {{ classes }}">
+	<hgroup class="slide--title">
+		{{#if title }}
+			<h1 class="slide--h1">{{ title }}</h1>
+		{{/if }}
+		{{#if subtitle }}
+			<h2 class="slide--h2">{{ subtitle }}</h2>
+		{{/if }}
+	</hgroup>
+	{{#if content }}
+		<div class="slide--text">
+			{{ content }}
+		</div>
+	{{/if }}
+</li> 

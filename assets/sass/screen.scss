@@ -1,0 +1,120 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+$colour_light: #ececec;
+$colour_dark: #000000;
+
+$line_height: 1.2;
+$font_size: 22;
+$h1_proportion: 1.3;
+$h2_proportion: 1;
+
+.hidden{
+	display: none;
+}
+
+*{
+	@include box-sizing( border-box );
+}
+
+html{
+	width: 100%;
+	height: 100%;	
+}
+
+body{
+	font-family: sans-serif;
+	font-size: $font_size + px;
+	line-height: $line_height;
+	width: 100%;
+	height: 100%;
+	letter-spacing: 1px;
+}
+
+.slideshow{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+	.slideshow--slide{
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: ($line_height * 2) + em;
+		width: 100%;
+		height: 100%;
+		background-color: $colour_light;
+		&:first-child{
+			opacity: 1;
+		}
+	}
+
+.slide{	
+	background-color: $colour_light;
+	color: $colour_dark;
+}
+
+	.slide__picture{
+		background-size: cover;
+		background-position: center;		
+	}
+
+	.slide__writing{
+
+	}
+
+	.slide__dark{
+		background-color: $colour_dark;
+		color: $colour_light;
+	}
+	.slide__light{
+		background-color: $colour_light;
+		color: $colour_dark;
+	}
+
+		.slide--title{
+			margin-bottom: $line_height + em;
+		}
+			.slide--h1{
+				text-transform: capitalize;
+				font-size: $h1_proportion + em;
+			}
+			.slide--h2{
+				text-transform: capitalize;
+				font-size: $h2_proportion + em;
+			}
+
+		.slide--text{
+			h1, h2, h3{
+
+			}
+			p, ul, ol{
+				max-width: 40em;
+				margin-bottom: $line_height + em;
+			}
+			p{
+
+			}
+			ul,ol{
+				padding-left: 1.4em;
+			}
+			ul{
+				list-style: disc;
+			}
+			ol{
+				list-style: decimal;
+			}
+			li{
+
+			}
+		}
+
+//override helpers
+.pre-case{
+	text-transform: none;
+}

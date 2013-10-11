@@ -1,0 +1,19 @@
+{
+  "name": "slideshow_compiler",
+  "version": "0.0.0",
+  "description": "Nascent slideshow presentation framework. Allows definition of slides using JSON. Then compiles into 1 file, with base64 encoded images for portability.",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oliver Smith",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-handlebars": "~0.5.11",
+    "grunt-contrib-compass": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "inliner": "~0.1.15",
+    "jsdom": "~0.8.6"
+  }
+}

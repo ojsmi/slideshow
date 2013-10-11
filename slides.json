@@ -1,0 +1,10 @@
+[
+	{
+		"type": "picture",
+		"classes": "list of classes",
+		"background": "path/to/image/file.extension",
+		"title": "The Title",
+		"subtitle": "And a Subtitle",
+		"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati cumque quasi autem aperiam modi vel vitae! Eligendi, officia, possimus voluptatum voluptas nobis corporis ex ad aperiam reprehenderit dolore culpa aliquam!"
+	}
+]
