@@ -13,7 +13,6 @@
     "grunt-contrib-handlebars": "~0.5.11",
     "grunt-contrib-compass": "~0.6.0",
     "grunt-contrib-watch": "~0.5.3",
-    "inliner": "~0.1.15",
     "jsdom": "~0.8.6",
     "grunt-contrib-uglify": "~0.2.4"
   }
