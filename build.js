@@ -47,6 +47,9 @@ var convertImages = function( definition, callback ){
 			}
 		}
 	}
+	if( imageCount === 0 && typeof callback === 'function' ){
+		callback( definition );
+	}
 }
 
 var saveEncoded = function( data, filename, callback ){
