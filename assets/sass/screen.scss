@@ -63,6 +63,12 @@ body{
 		background-size: cover;
 		background-position: center;		
 	}
+		.slide__picture--citation{
+			position: absolute;
+			bottom: $line_height * 2 + em;
+			left: $line_height * 2 + em;
+			font-size: .5em;
+		}
 
 	.slide__writing{
 
