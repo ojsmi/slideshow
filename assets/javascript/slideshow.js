@@ -26,6 +26,12 @@ Requires: Zepto, our compiled templates.
 
 	Slideshow.prototype = {
 		guessSlideType: function( slide ){
+			if( slide.video ){
+				return 'video';
+			}
+			if( slide.audio ){
+				return 'audio';
+			}
 			if( slide.background ){
 				return 'picture';
 			}
@@ -70,9 +76,20 @@ Requires: Zepto, our compiled templates.
 			this.updateDom();
 
 		},
+		updateMedia: function(){
+			this.$slides.find('video, audio').each( function(){
+				this.pause();
+			});
+			if( this.$currentSlide.find('video, audio').length > 0 ){				
+				this.$currentSlide.find('video, audio').each( function(){
+					this.play();
+				});
+			}
+		},
 		updateDom: function(){
 			this.$slides.addClass( 'hidden' );
 			this.$currentSlide.removeClass( 'hidden' );
+			this.updateMedia();
 		},
 		next: function(){
 			if( this.$currentSlide.next( slideClass ).length > 0 ){

@@ -5,14 +5,19 @@
 
 @import "compass/reset";
 @import "compass/css3";
+//@import "font"; //optionally include a base64 encoded font
 
 $colour_light: #ececec;
-$colour_dark: #000000;
+$colour_dark: #000c0f;
 
-$line_height: 1.2;
+$line_height: 1.3;
 $font_size: 22;
 $h1_proportion: 1.3;
 $h2_proportion: 1;
+
+$font_serif: times, serif;
+$font_sans: 'helvetica neue', arial, helvetica, sans-serif;
+$font_mono: monospace;
 
 .hidden{
 	display: none;
@@ -28,12 +33,12 @@ html{
 }
 
 body{
-	font-family: sans-serif;
+	font-family: $font_sans;
 	font-size: $font_size + px;
+	font-size: 1.8vmax;
 	line-height: $line_height;
 	width: 100%;
 	height: 100%;
-	letter-spacing: 1px;
 }
 
 .slideshow{
@@ -62,17 +67,23 @@ body{
 	.slide__picture{
 		background-size: cover;
 		background-position: center;		
-	}
-		.slide__picture--citation{
-			position: absolute;
-			bottom: $line_height * 2 + em;
-			left: $line_height * 2 + em;
-			font-size: .5em;
-		}
+	}		
 
 	.slide__writing{
-
+	
 	}
+	
+	.slide__video{
+		video{
+			@include inline-block;
+			width: auto;
+			height: 105%;
+			position: fixed;
+			top: -1%;
+			left: -1%;
+		}
+	}
+
 
 	.slide__dark{
 		background-color: $colour_dark;
@@ -83,11 +94,15 @@ body{
 		color: $colour_dark;
 	}
 
+		
 		.slide--title{
+			max-width: 60%;
+			position: relative;
 			margin-bottom: $line_height + em;
+			margin-top: ($line_height * 2) + em;
 		}
 			.slide--h1{
-				text-transform: capitalize;
+				text-transform: uppercase;
 				font-size: $h1_proportion + em;
 			}
 			.slide--h2{
@@ -120,7 +135,9 @@ body{
 			}
 		}
 
-//override helpers
-.pre-case{
-	text-transform: none;
-}
+		.slide--citation{
+			position: absolute;
+			bottom: ($line_height * 2) + rem;
+			left: ($line_height * 2) + rem;
+			font-size: 0.6em;
+		}

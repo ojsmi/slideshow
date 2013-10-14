@@ -1,0 +1,17 @@
+<li class="slideshow--slide slide slide__audio {{ classes }}" style="background-image: url( {{ background }} );">
+	<audio loop class="slide--audio">
+		<source src="{{audio}}.mp3" type="video/mp4"/>
+		<source src="{{audio}}.ogg" type="video/ogg"/>
+	</audio>
+	<hgroup class="slide--title">
+		{{#if title }}
+			<h1 class="slide--h1">{{ title }}</h1>
+		{{/if }}
+		{{#if subtitle }}
+			<h2 class="slide--h2">{{ subtitle }}</h2>
+		{{/if }}
+	</hgroup>	
+	{{#if citation}}
+		<cite class="slide--citation">{{ citation }}</cite>
+	{{/if }}
+</li>

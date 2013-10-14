@@ -1,0 +1,18 @@
+<li class="slideshow--slide slide slide__video {{ classes }}" style="background-image: url( {{ video }}.jpg );">
+	<video loop muted class="slide--video">
+		<source src="{{video}}.mp4" type="video/mp4"/>
+		<source src="{{video}}.ogg" type="video/ogg"/>
+		<source src="{{video}}.webm" type="video/webm"/>
+	</video>
+	<hgroup class="slide--title">
+		{{#if title }}
+			<h1 class="slide--h1">{{ title }}</h1>
+		{{/if }}
+		{{#if subtitle }}
+			<h2 class="slide--h2">{{ subtitle }}</h2>
+		{{/if }}
+	</hgroup>	
+	{{#if citation}}
+		<cite class="slide--citation">{{ citation }}</cite>
+	{{/if }}
+</li>

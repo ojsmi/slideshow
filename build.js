@@ -59,6 +59,7 @@ var saveEncoded = function( data, filename, callback ){
 };
 
 var processSlideImages = function( src, callback ){
+	//read the JSON definitions file
 	fs.readFile( src, { encoding: 'utf8' }, function( err, data ){
 		var definition = JSON.parse( data );
 		convertImages( definition, callback );
@@ -67,10 +68,6 @@ var processSlideImages = function( src, callback ){
 
 
 var compile = function( file, callback ){	
-	// var process = new Inliner( 'index.html' );
-	// process.on( 'progress', function( event ){
-	// 	console.error( event );
-	// } ).on( 'end', callback );
 	fs.readFile( file, { encoding: 'utf8' }, function( err, data ){
 		doc = jsdom.jsdom( data );
 		var window = doc.parentWindow;
@@ -86,8 +83,7 @@ var compile = function( file, callback ){
 			(function( tag ){
 				fs.readFile( tag.href, { encoding: 'utf8' }, function( err, data ){
 					cssContent += data;
-					count++;
-					console.log( 'css', count, aim );
+					count++;					
 					if( count === aim ){
 						callback( cssContent, jsContent );
 					}
@@ -101,7 +97,6 @@ var compile = function( file, callback ){
 				fs.readFile( tag.src, { encoding: 'utf8' }, function( err, data ){
 					jsContent += data;
 					count++;
-					console.log( 'js', count, aim );
 					if( count === aim ){						
 						callback( cssContent, jsContent );
 					}
