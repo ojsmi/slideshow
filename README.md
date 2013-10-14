@@ -21,12 +21,15 @@ There are anumber of options usable when defining slides (more can be added, or 
 ```
 	[
 		{
-			type: String, [text | Picture], optional (will infer from use of 'background')
-			classes: String, list of classes to be added to the slide
-			background: String, path to an image file (.jpg, .png, .gif)
-			title: String, the title of the slide
-			subtitle: String, the subtitle
-			content: String, the text content. TODO: Markdown parsing...
+			"type": String, [text | Picture], optional (will infer from use of 'background')
+			"classes": String, list of classes to be added to the slide
+			"background": String, path to an image file (.jpg, .png, .gif)
+			"title": String, the title of the slide
+			"subtitle": String, the subtitle
+			"content": String, the text content. TODO: Markdown parsing...
+			"video": String, path to a video file (no extension - will add a source list with .mp4, .ogg and .webm
+			"audio": String, path to an audio file (no extension - will add a source list with .mp3 and .ogg
+			"citation": String, a reference to add to the slide 
 		}
 	]
 ```
